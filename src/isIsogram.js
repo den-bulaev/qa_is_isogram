@@ -6,7 +6,11 @@
  * @returns {boolean}
  */
 function isIsogram(word) {
-  const wordToLower = word.toLowerCase();
+  const wordToLower = word.toLowerCase().trim();
+
+  if (wordToLower.match(/[^a-z]/)) {
+    return false;
+  }
 
   for (let i = 0; i < wordToLower.length; i++) {
     const letter = wordToLower[i];
